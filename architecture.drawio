@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net" modified="2025-09-04T08:09:33.725482" agent="python" version="20.8.16">
+  <diagram id="arch" name="Architecture">
+    <mxGraphModel dx="1008" dy="707" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="#FFFFFF">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="bulba" value="Bulbapedia (source)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="140" y="240" width="200" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="ec2" value="EC2 (scraper.py)&#10;IAM Role" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="440" y="240" width="240" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="s3" value="Amazon S3&#10;Prefix: images/Generation_*" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="780" y="240" width="260" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="user" value="Vérification publique via URL S3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="240" width="260" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="a1" edge="1" parent="1" source="bulba" target="ec2" style="endArrow=block;strokeColor=#6c8ebf;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="a2" edge="1" parent="1" source="ec2" target="s3" style="endArrow=block;strokeColor=#82b366;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="a3" edge="1" parent="1" source="s3" target="user" style="endArrow=block;strokeColor=#d79b00;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
